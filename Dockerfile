@@ -29,3 +29,17 @@ WORKDIR ${APP_DIR}
 
 # Add ckan command
 RUN ln -s ${APP_DIR}/ckan /usr/bin/ckan
+
+# Install FIWARE specific extensions
+
+RUN pip install -e git+https://github.com/conwetlab/ckanext-datarequests.git#egg=ckanext-datarequests && \
+    pip install -e git+https://github.com/conwetlab/ckanext-fiware_header.git#egg=ckanext-fiware_header && \
+    pip install -e git+https://github.com/okfn/ckanext-fiwarelabs.git#egg=ckanext-fiwarelabs && \
+    pip install -e git+https://github.com/ckan/ckanext-geoview.git#egg=ckanext-geoview && \
+    pip install -e git+https://github.com/telefonicaid/ckanext-ngsiview#egg=ckanext-ngsiview && \
+    pip install -e git+https://github.com/conwetlab/ckanext-oauth2#egg=ckanext-oauth2 && \
+    pip install -e git+https://github.com/ckan/ckanext-pdfview.git#egg=ckanext-pdfview && \
+    pip install -e git+https://github.com/ckan/ckanext-harvest.git#egg=ckanext-harvest && \
+    pip install -r ${APP_DIR}/src/ckanext-harvest/pip-requirements.txt && \
+    pip install -e git+https://github.com/conwetlab/ckanext-privatedatasets.git#egg=ckanext-privatedatasets && \
+    pip install -e git+https://github.com/conwetlab/ckanext-storepublisher.git#egg=ckanext-storepublisher

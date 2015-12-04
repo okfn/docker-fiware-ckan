@@ -33,5 +33,4 @@ ckan:
     - data
   volumes:
     - ./setup/production.ini:/srv/app/production.ini
-    - ./src:/srv/app/src
   env_file: .env
