@@ -30,8 +30,13 @@ WORKDIR ${APP_DIR}
 # Add ckan command
 RUN ln -s ${APP_DIR}/ckan /usr/bin/ckan
 
-# Install FIWARE specific extensions
+# We need setuptools<19.4, otherwise ckanext-oauth2 can not be installed because of
+# https://bitbucket.org/pypa/setuptools/issues/491/setuptools-194-breaks-pip-install-builds
+# This can be removed once this is merged:
+# https://github.com/conwetlab/ckanext-oauth2/pull/7
+RUN pip install setuptools==19.3
 
+# Install FIWARE specific extensions
 RUN pip install -e git+https://github.com/conwetlab/ckanext-datarequests.git#egg=ckanext-datarequests && \
     pip install -e git+https://github.com/conwetlab/ckanext-fiware_header.git#egg=ckanext-fiware_header && \
     pip install -e git+https://github.com/okfn/ckanext-fiwarelabs.git#egg=ckanext-fiwarelabs && \
