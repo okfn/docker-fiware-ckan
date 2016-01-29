@@ -19,9 +19,6 @@ solr:
 datapusher:
   build: datapusher
   hostname: datapusher
-  links:
-      - ckan:ckan
-
 
 ckan:
   build: .
