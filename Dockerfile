@@ -4,7 +4,7 @@ MAINTAINER Open Knowledge <info@okfn.org>
 
 ENV APP_WSGI=ckan.wsgi
 
-ENV GIT_BRANCH=release-v2.4-latest
+ENV GIT_BRANCH=release-v2.5-latest
 ENV GIT_URL=https://github.com/ckan/ckan.git
 
 ENV CKAN_INI=production.ini
