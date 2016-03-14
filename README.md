@@ -1,5 +1,7 @@
 # Docker files for FIWARE Labs flavoured CKAN
 
+[![Docker hub](https://img.shields.io/docker/pulls/fiware/ckan.svg)](https://hub.docker.com/r/fiware/ckan/)
+
 [CKAN](https://github.com/ckan/ckan) is a powerful Data Management system used
 to power Open Data catalogues across the world, including many national
 portals. It has many publishing and curating features and offers a full API to
