@@ -37,7 +37,9 @@ After a few minutes you will be able to access the CKAN site at http://localhost
 ![CKAN FIWARE](http://i.imgur.com/saUqbcp.png)
 
 **NOTE:** the `oauth2` authorization extension is not enabled by default as it
-requires further configuration. Edit the relevant settings on `setup/production.ini`
+requires further configuration. Edit the relevant settings on `setup/production.ini`.
+You may need to set the `OAUTHLIB_INSECURE_TRANSPORT` env var if not serving CKAN under https,
+check the [documentation](https://github.com/conwetlab/ckanext-oauth2/wiki/Activating-and-Installing) for details.
 
 ### Customizing the image
 
