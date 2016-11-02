@@ -4,7 +4,7 @@ MAINTAINER Open Knowledge <info@okfn.org>
 
 ENV APP_WSGI=ckan.wsgi
 
-ENV GIT_BRANCH=release-v2.5-latest
+ENV GIT_BRANCH=release-v2.6-latest
 ENV GIT_URL=https://github.com/ckan/ckan.git
 
 ENV CKAN_INI=production.ini
@@ -15,7 +15,7 @@ RUN mkdir ${WORKSPACE} ${SRC_DIR} && cd ${SRC_DIR} && \
     ${GIT_URL}  ckan && \
     cd ckan && \
     cp who.ini ${APP_DIR} && \
-    python setup.py install && \
+    python setup.py develop && \
     pip install --upgrade -r requirements.txt
 
 COPY ${SETUP}/${APP_CONF} ${SUPERVISOR_DIR}/${APP_CONF}
