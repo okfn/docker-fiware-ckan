@@ -11,7 +11,7 @@ postgres:
     - ./postgres/setup_remote_connections.sh:/docker-entrypoint-initdb.d/setup_remote_connections.sh
 
 solr:
-  image: solr:latest
+  image: solr:5.5
   hostname: solr
   volumes:
     - ./solr/ckan:/opt/solr/server/solr/ckan
